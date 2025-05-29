@@ -27,6 +27,9 @@ jobs:
       - name: Create dist directory
         run: mkdir dist
 
+      - name: Move fonts to dist
+        run: mv fonts dist/fonts
+
       - name: Minifiy HTML and JavaScript
         run: |
           html-minifier-terser index.html \
