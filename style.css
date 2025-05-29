@@ -135,3 +135,17 @@ FONTS
   font-weight: 800;
   src: url("fonts/nunito/nunito-v26-latin-800.woff2") format("woff2");
 }
+/* ==========
+/* ==========
+UTILITY CLASSES
+========== */
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+}
+
+.shadow-md {
+  box-shadow:
+    2px 4px 10px 4px var(--shadow),
+    2px 2px 4px 3px var(--shadow);
+}
