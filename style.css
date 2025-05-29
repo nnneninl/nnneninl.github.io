@@ -46,9 +46,9 @@ COLORS
   --ring: #818cf8;
   --shadow: hsl(0 0% 0% / 0.18);
 }
-/* =====
+/* ==========
 RESET
-===== */
+========== */
 *,
 *::before,
 *::after {
@@ -70,7 +70,7 @@ html {
 body {
   min-height: 100vh;
   font-family:
-    "Inter",
+    "Nunito",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -97,4 +97,41 @@ ul {
 
 a {
   text-decoration: none;
+}
+/* ==========
+FONTS
+========== */
+/* nunito-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/nunito/nunito-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nunito-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/nunito/nunito-v26-latin-500.woff2") format("woff2");
+}
+/* nunito-700 - latin */
+
+@font-face {
+  font-display: swap;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/nunito/nunito-v26-latin-700.woff2") format("woff2");
+}
+
+/* nunito-800 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/nunito/nunito-v26-latin-800.woff2") format("woff2");
 }
