@@ -1,0 +1,43 @@
+name: Build and Deploy to gh-pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.1.0
+
+      - name: Install minifiers
+        run: |
+          npm install -g html-minifier-terser@latest lightningcss-cli@latest
+
+      - name: Create dist directory
+        run: mkdir dist
+
+      - name: Minifiy HTML and JavaScript
+        run: |
+          html-minifier-terser index.html \
+          -o dist/index.html \
+          --collapse-whitespace \
+          --remove-comments \
+          --minify-css false \
+          --minify-js true
+
+      - name: Minify CSS
+        run: lightningcss --minify --bundle --targets ">= 0.25%" style.css -o dist/style.css
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
